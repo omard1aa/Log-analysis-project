@@ -39,12 +39,10 @@ sql_query_1 = ('''SELECT title, COUNT(*) as views
              JOIN log ON log.path = CONCAT('/article/', articles.slug)
              GROUP BY title ORDER BY views DESC LIMIT 3;''')
 
-
 sql_query_2 = ('''SELECT authors.name , COUNT(*) as views
             FROM authors JOIN articles ON articles.author = authors.id
             JOIN log ON log.path = CONCAT('/article/', articles.slug)
             GROUP BY authors.name ORDER BY views DESC;''')
-
 
 sql_query_3 = ('''SELECT * from (SELECT date(time), ROUND(100.0 * SUM(case log.status
             when '200 OK' then 0 else 1 end ) / COUNT(log.status),3) as error
@@ -58,10 +56,6 @@ if(__name__ == '__main__'):
         2. Who are the most popular article authors of all time?\n
         3. On which days did more than 1 % of requests lead to errors?\n''')
 
-    input1 = 1
-    input2 = 2
-    input3 = 3
-
     query_result_1 = getQuery(sql_query_1)
     result_1 = manipulateQueryResult(query_result_1)
 
@@ -71,11 +65,11 @@ if(__name__ == '__main__'):
     query_result_3 = getQuery(sql_query_3)
     result_3 = manipulateQuery3_Result(query_result_3)
 
-    if(question == str(input1)):
+    if(question == '1')):
         print(result_1)
-    elif(question == str(input2)):
+    elif(question == '2'):
         print(result_2)
-    elif(question == str(input3)):
+    elif(question == '3'):
         print(result_3)
     else:
         print("Not a valid option, Please enter 1, 2 or 3")
