@@ -21,7 +21,7 @@ and prints out reports (in plain text) based on the data in the database. This r
   
   4. Use `\c news` to connect to news Database.
   
-### Running the queries:
+#### Runn the queries:
   Run Reporting Tool.py using this command inside your vagrant box:
   ```
     $ python3 /vagrant/Reporting\ Tool.py 
