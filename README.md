@@ -10,7 +10,7 @@ and prints out reports (in plain text) based on the data in the database. This r
   
 #### Setting up and running the database:
 
-  1. usee 'vagrant up' and 'vagrant ssh' to up and run vagrant 
+  1. usee `vagrant up` and `vagrant ssh` to up and run vagrant 
 
   2. Load the data in local database using the command:
   
@@ -20,8 +20,8 @@ and prints out reports (in plain text) based on the data in the database. This r
   3. Use `psql` to connect to vagrant postgreSQL.
   
   4. Use `\c news` to connect to news Database.
-  ```
-#### Running the queries:
+  
+### Running the queries:
   Run Reporting Tool.py using this command inside your vagrant box:
   ```
     $ python3 /vagrant/Reporting\ Tool.py 
